@@ -1,0 +1,22 @@
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #f4f5ff;
+  background: #070914;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --bg: #070914;
+  --surface: rgba(17, 22, 43, .58);
+  --muted: #969bb7;
+  --cyan: #68e8ff;
+  --blue: #647cff;
+  --violet: #a77bff;
+  --line: rgba(190, 204, 255, .13);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: auto; scroll-padding-top: 100px; }
+body { margin: 0; min-width: 320px; background: var(--bg); }
+button, input, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+button { color: inherit; }
+::selection { background: rgba(104, 232, 255, .25); color: white; }

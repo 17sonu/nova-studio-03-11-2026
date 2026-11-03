@@ -1,0 +1,4 @@
+.reveal { will-change: opacity, transform; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { will-change: auto; }
+}

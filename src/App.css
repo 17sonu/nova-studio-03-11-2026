@@ -1,0 +1,5 @@
+.app-shell { position: relative; isolation: isolate; overflow: clip; }
+main, footer { position: relative; z-index: 1; }
+.ambient { position: fixed; width: 34rem; height: 34rem; border-radius: 50%; filter: blur(130px); opacity: .12; pointer-events: none; z-index: -1; }
+.ambient-one { top: 15%; left: -25rem; background: #315cff; }
+.ambient-two { bottom: -15rem; right: -20rem; background: #8b35ff; }
