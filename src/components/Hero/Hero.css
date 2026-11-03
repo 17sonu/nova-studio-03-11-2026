@@ -33,7 +33,7 @@
 }
 .hero h1 {
   margin: 0;
-  font: 600 clamp(3.6rem, 7.6vw, 6.5rem)/0.98 "Space Grotesk";
+  font: 600 clamp(3.6rem, 7.6vw, 5.5rem)/0.98 "Space Grotesk";
   letter-spacing: -0.075em;
 }
 .hero h1 span {
@@ -46,7 +46,7 @@
   max-width: 465px;
   margin: 30px 0 28px;
   color: #a7adc6;
-  font-size: 15px;
+  font-size: 13px;
   line-height: 1.85;
 }
 .hero-actions {
@@ -95,6 +95,7 @@
   margin-top: 65px;
   color: #717a9b;
   font-size: 9px;
+  text-transform: uppercase;
   letter-spacing: 0.13em;
 }
 .availability-dot {

@@ -88,9 +88,9 @@ export default function Navbar({ progress = 0, activeSection = "home" }) {
           href=""
           onClick={"location.reload(); return false;"}
         >
-          <span className="brand-mark">N</span>
+          <span className="brand-mark">NS</span>
           <span>
-            NOVA<span className="brand-dot">.</span>
+            NOVA Studio<span className="brand-dot">.</span>
           </span>
         </a>
 
