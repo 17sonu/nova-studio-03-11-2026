@@ -2,40 +2,41 @@ import { ArrowUpRight } from "lucide-react";
 import "./About.css";
 
 const facts = [
-  ["04+", "Years exploring"],
-  ["18", "Projects shipped"],
-  ["12", "Tools mastered"],
+  ["01+", "Years exploring"],
+  ["02", "Projects shipped"],
+  ["12+", "Tools mastered"],
 ];
 
 export default function About() {
   return (
     <section className="about section-wrap section-space" id="about">
-      <div className="section-kicker reveal">02 — A LITTLE ABOUT ME</div>
+      <div className="section-kicker reveal">02 — A LITTLE ABOUT US</div>
       <div className="about-grid">
         <div className="about-heading reveal">
           <h2>
             Curiosity is
             <br />
-            my <span>compass.</span>
+            our <span>compass.</span>
           </h2>
           <p>
-            Good technology should feel effortless. Great technology makes you
-            feel something.
+            NOVA Studio is a technology-driven creative studio focused on
+            building practical, intelligent and scalable digital solutions.
           </p>
         </div>
         <div className="about-content reveal">
           <p className="about-intro">
-            I'm a multidisciplinary developer who enjoys working at the
-            intersection of technology, interaction, and visual storytelling. I
-            care about the details — from the first sketch to the final frame.
+            We bring together software engineering, machine learning and IoT
+            development to solve real-world problems through technology. From
+            developing modern web applications to creating intelligent systems
+            and connected devices, we focus on transforming concepts into
+            products that make a difference.
           </p>
           <p className="about-secondary">
-            My process is grounded in experimentation, clear thinking, and a
-            belief that the best experiences are built with both precision and
-            personality.
+            Our approach combines technical expertise, creative thinking and a
+            commitment to continuous innovation.
           </p>
           <a className="text-link" href="#experience">
-            More about my journey <ArrowUpRight size={15} />
+            More about our journey <ArrowUpRight size={15} />
           </a>
         </div>
       </div>
