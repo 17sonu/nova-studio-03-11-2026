@@ -192,11 +192,8 @@ section[id] {
     flex-direction: column;
     gap: 0;
     padding: 10px;
-    border: 1px solid var(--line);
     border-radius: 18px;
-    background: rgba(11, 15, 31, 0.94);
-    backdrop-filter: blur(22px);
-    box-shadow: 0 20px 60px #0008;
+    background: rgba(11, 15, 31, 0);
   }
 
   .nav-links.nav-open {
@@ -217,8 +214,4 @@ section[id] {
     margin-top: 6px;
   }
 
-  /* Section positioning */
-  section[id] {
-    scroll-margin-top: -100px;
-  }
 }
