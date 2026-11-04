@@ -161,7 +161,7 @@
 
 /* Section positioning */
 section[id] {
-  scroll-margin-top: -150px;
+  scroll-margin-top: -100px;
 }
 
 /* Responsive navigation */

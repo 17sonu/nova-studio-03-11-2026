@@ -1,5 +1,5 @@
 .projects {
-  padding-top: clamp(175px, 21vh, 245px);
+  padding-top: clamp(19vh, 21vh, 245px);
 }
 .project-list {
   border-top: 1px solid var(--line);
@@ -143,6 +143,9 @@
   font-size: 11px;
 }
 @media (max-width: 700px) {
+  .projects {
+    padding-top: clamp(10vh, 13vh, 245px);
+  }
   .project-row {
     grid-template-columns: 1fr;
     gap: 25px;
