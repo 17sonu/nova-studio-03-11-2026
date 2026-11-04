@@ -1,34 +1,56 @@
-import { Code2, Layers3, WandSparkles, ArrowUpRight } from "lucide-react";
+import {
+  Code2,
+  BrainCircuit,
+  Cpu,
+  PanelsTopLeft,
+  Workflow,
+  ArrowUpRight,
+} from "lucide-react";
+
 import "./Expertise.css";
 
 const services = [
   {
     number: "01",
     icon: Code2,
-    title: "Web Development",
-    text: "Fast, accessible, and resilient digital products built with modern frontend and backend technologies.",
-    tags: ["React", "Node.js", "APIs"],
+    title: "Web & Application Development",
+    text: "We design and develop modern, responsive and scalable websites and web applications tailored to business needs.",
+    tags: ["Web Apps", "Full-Stack", "Business Software", "API Integration"],
   },
   {
     number: "02",
-    icon: Layers3,
-    title: "UI / UX Design",
-    text: "Clear interfaces and thoughtful journeys that turn complicated workflows into natural experiences.",
-    tags: ["Prototyping", "Systems", "Research"],
+    icon: BrainCircuit,
+    title: "AI & Machine Learning",
+    text: "We develop intelligent software using machine learning and AI to automate processes, analyze data and solve complex problems.",
+    tags: ["Machine Learning", "Predictive Analytics", "AI Integration", "Automation"],
   },
   {
     number: "03",
-    icon: WandSparkles,
-    title: "Creative Development",
-    text: "Experimental interactions, motion systems, and expressive web experiences that invite exploration.",
-    tags: ["Three.js", "Motion", "WebGL"],
+    icon: Cpu,
+    title: "IoT & Embedded Systems",
+    text: "We design connected systems that bridge hardware and software, enabling devices to communicate, collect data and perform intelligent operations.",
+    tags: ["IoT Solutions", "Embedded Systems", "Sensors", "Hardware Integration"],
+  },
+  {
+    number: "04",
+    icon: PanelsTopLeft,
+    title: "UI/UX & Digital Design",
+    text: "We create intuitive interfaces and thoughtful digital experiences that combine usability, aesthetics and functionality.",
+    tags: ["UI/UX Design", "Prototyping", "Interface Design", "Digital Experiences"],
+  },
+  {
+    number: "05",
+    icon: Workflow,
+    title: "Custom Software & Automation",
+    text: "We build customized software and automated workflows that simplify operations, improve efficiency and address specific business challenges.",
+    tags: ["Custom Software", "Workflow Automation", "System Integration", "Management Systems"],
   },
 ];
 
 export default function Expertise() {
   return (
     <section className="expertise section-wrap section-space" id="expertise">
-      <div className="section-kicker reveal">03 — WHAT I DO</div>
+      <div className="section-kicker reveal">03 — WHAT WE DO</div>
       <div className="section-heading reveal">
         <h2>
           Ideas into
@@ -43,7 +65,7 @@ export default function Expertise() {
         {services.map(({ number, icon: Icon, title, text, tags }) => (
           <article className="service-card reveal" key={number}>
             <div className="service-top">
-              <span>{number} / 03</span>
+              <span>{number} / 05</span>
               <Icon size={22} />
             </div>
             <h3>{title}</h3>

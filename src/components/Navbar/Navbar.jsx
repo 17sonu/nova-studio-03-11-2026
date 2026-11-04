@@ -90,7 +90,7 @@ export default function Navbar({ progress = 0, activeSection = "home" }) {
         >
           <span className="brand-mark">NS</span>
           <span>
-            NOVA Studio<span className="brand-dot">.</span>
+            NOVA <span className="brand-dot">Studio.</span>
           </span>
         </a>
 
