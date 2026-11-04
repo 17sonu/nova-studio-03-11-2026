@@ -1,0 +1,251 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #070d1b;
+  color: #edf6ff;
+  animation: preloader-appear 0.6s ease both;
+}
+
+.preloader-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(390px, 85%);
+  text-align: center;
+}
+
+.preloader-glow {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+.glow-one {
+  top: 15%;
+  left: 10%;
+  background: rgba(41, 133, 255, 0.12);
+}
+
+.glow-two {
+  right: 10%;
+  bottom: 10%;
+  background: rgba(135, 73, 255, 0.12);
+}
+
+/* Orbital logo */
+
+.preloader-symbol {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 38px;
+}
+
+.orbit-core {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border: 1px solid rgba(101, 232, 255, 0.75);
+  border-radius: 50%;
+  background: rgba(101, 232, 255, 0.04);
+  box-shadow:
+    0 0 25px rgba(101, 232, 255, 0.12),
+    inset 0 0 20px rgba(101, 232, 255, 0.08);
+}
+
+.orbit-core span {
+  color: #e9faff;
+  font: 700 29px "Space Grotesk", sans-serif;
+  text-shadow: 0 0 18px rgba(101, 232, 255, 0.6);
+}
+
+.orbit {
+  position: absolute;
+  border: 1px solid rgba(101, 232, 255, 0.25);
+  border-radius: 50%;
+}
+
+.orbit-one {
+  width: 100px;
+  height: 100px;
+  animation: orbit-rotate 7s linear infinite;
+}
+
+.orbit-two {
+  width: 120px;
+  height: 75px;
+  border-color: rgba(150, 113, 255, 0.55);
+  transform: rotate(-35deg);
+  animation: orbit-reverse 9s linear infinite;
+}
+
+.orbit-dot {
+  position: absolute;
+  top: 8px;
+  right: 20px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #65e8ff;
+  box-shadow: 0 0 12px #65e8ff;
+  animation: orbit-dot-pulse 1.5s ease-in-out infinite;
+}
+
+/* Brand */
+
+.preloader-brand h1 {
+  margin: 0;
+  color: #f2f7ff;
+  font: 700 25px "Space Grotesk", sans-serif;
+  letter-spacing: 0.17em;
+}
+
+.preloader-brand h1 span {
+  color: #65e8ff;
+}
+
+.preloader-brand p {
+  margin: 12px 0 0;
+  color: #788ba9;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+}
+
+/* Progress */
+
+.preloader-progress {
+  width: 100%;
+  margin-top: 62px;
+}
+
+.progress-track {
+  width: 100%;
+  height: 2px;
+  overflow: hidden;
+  background: rgba(155, 177, 220, 0.15);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #687aff, #65e8ff);
+  box-shadow: 0 0 12px rgba(101, 232, 255, 0.65);
+  transition: width 0.2s ease;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  color: #7186a8;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+
+.progress-number {
+  color: #65e8ff;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Footer */
+
+.preloader-footer {
+  position: absolute;
+  right: 5%;
+  bottom: 30px;
+  left: 5%;
+  display: flex;
+  justify-content: space-between;
+  color: #52637e;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+}
+
+/* Animations */
+
+@keyframes orbit-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-reverse {
+  to {
+    transform: rotate(-395deg);
+  }
+}
+
+@keyframes orbit-dot-pulse {
+  50% {
+    opacity: 0.4;
+    transform: scale(0.7);
+  }
+}
+
+@keyframes preloader-appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.preloader-exit {
+  animation: preloader-disappear 0.75s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+
+@keyframes preloader-disappear {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.025);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 560px) {
+  .preloader-symbol {
+    transform: scale(0.9);
+    margin-bottom: 30px;
+  }
+
+  .preloader-brand h1 {
+    font-size: 22px;
+  }
+
+  .preloader-brand p {
+    font-size: 8px;
+    letter-spacing: 0.14em;
+  }
+
+  .preloader-progress {
+    margin-top: 48px;
+  }
+
+  .preloader-footer {
+    font-size: 7px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit,
+  .orbit-dot {
+    animation: none;
+  }
+}

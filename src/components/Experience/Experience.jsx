@@ -1,24 +1,142 @@
-import { ArrowUpRight } from "lucide-react";
+import {
+  Code2,
+  Server,
+  Database,
+  BrainCircuit,
+  Cpu,
+  Palette,
+  Rocket,
+} from "lucide-react";
 import "./Experience.css";
 
-const milestones = [
-  { date: "2024 — NOW", title: "Independent Developer", place: "Freelance / Personal Studio", desc: "Designing and building digital products, interactive web experiences, and experiments for the modern web.", tags: ["React", "Three.js", "Full-stack"] },
-  { date: "2022 — 2024", title: "Frontend Developer", place: "Digital Product Team", desc: "Collaborated across design and engineering to ship accessible interfaces and scalable component systems.", tags: ["JavaScript", "CSS", "Design systems"] },
-  { date: "2020 — 2024", title: "B.Tech — Information Technology", place: "University", desc: "Built a foundation in computer science, software engineering, data structures, and human-centered problem solving.", tags: ["Computer science", "Engineering"] }
+const technologyGroups = [
+  {
+    number: "01",
+    category: "Frontend",
+    icon: Code2,
+    technologies: ["React", "JavaScript", "HTML", "CSS"],
+  },
+  {
+    number: "02",
+    category: "Backend",
+    icon: Server,
+    technologies: ["Node.js", "Express.js"],
+  },
+  {
+    number: "03",
+    category: "Database",
+    icon: Database,
+    technologies: ["MongoDB", "MySQL"],
+  },
+  {
+    number: "04",
+    category: "AI & Machine Learning",
+    icon: BrainCircuit,
+    technologies: ["Python", "TensorFlow", "Scikit-learn"],
+  },
+  {
+    number: "05",
+    category: "IoT & Embedded Systems",
+    icon: Cpu,
+    technologies: ["Arduino", "ESP32", "Raspberry Pi"],
+  },
+  {
+    number: "06",
+    category: "Design",
+    icon: Palette,
+    technologies: ["Figma", "Adobe Tools"],
+  },
+  {
+    number: "07",
+    category: "Deployment & Tools",
+    icon: Rocket,
+    technologies: ["Git", "GitHub", "Vercel"],
+  },
 ];
+
+const marqueeWords = [
+  "BUILD",
+  "INNOVATE",
+  "DESIGN",
+  "DEVELOP",
+  "CONNECT",
+  "AUTOMATE",
+  "EVOLVE",
+];
+
+function MarqueeTrack() {
+  return (
+    <div className="tech-marquee reveal" aria-label={marqueeWords.join(" • ")}>
+      <div className="tech-marquee-track">
+        {[0, 1].map((copy) => (
+          <div
+            className="tech-marquee-group"
+            key={copy}
+            aria-hidden={copy === 1 ? "true" : undefined}
+          >
+            {marqueeWords.map((word) => (
+              <span className="tech-marquee-word" key={word}>
+                {word}
+                <span className="tech-marquee-dot">•</span>
+              </span>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function Experience() {
   return (
-    <section className="experience section-wrap section-space" id="experience">
-      <div className="section-kicker reveal">05 — THE JOURNEY</div>
-      <div className="section-heading reveal"><h2>Always in<br /><span>progress.</span></h2><p>Every chapter adds a new perspective. Here's a snapshot of the path so far.</p></div>
-      <div className="timeline">
-        {milestones.map((item, index) => <article className="timeline-item reveal" key={item.title}>
-          <div className="timeline-marker"><span>{String(index + 1).padStart(2, "0")}</span></div>
-          <div className="timeline-date">{item.date}</div>
-          <div className="timeline-body"><h3>{item.title}</h3><div className="timeline-place">{item.place}</div><p>{item.desc}</p><div className="timeline-tags">{item.tags.map((tag) => <span key={tag}>{tag}</span>)}</div></div>
-        </article>)}
+    <section
+      className="experience section-wrap section-space"
+      id="experience"
+    >
+      <div className="section-kicker reveal">
+        05 — TECHNOLOGIES USED
       </div>
+
+      <div className="section-heading reveal">
+        <h2>
+          Tools behind
+          <br />
+          <span>the ideas.</span>
+        </h2>
+
+        <p>
+          A versatile technology stack that helps us turn concepts
+          into functional products, intelligent systems and
+          connected experiences.
+        </p>
+      </div>
+
+      <div className="technology-timeline">
+        {technologyGroups.map(
+          ({ number, category, icon: Icon, technologies }) => (
+            <article className="technology-item reveal" key={category}>
+              <div className="technology-marker">
+                <span>{number}</span>
+              </div>
+
+              <div className="technology-content">
+                <div className="technology-item-heading">
+                  <Icon size={21} strokeWidth={1.7} />
+                  <h3>{category}</h3>
+                </div>
+
+                <div className="technology-tags">
+                  {technologies.map((technology) => (
+                    <span key={technology}>{technology}</span>
+                  ))}
+                </div>
+              </div>
+            </article>
+          )
+        )}
+      </div>
+
+      <MarqueeTrack />
     </section>
   );
 }

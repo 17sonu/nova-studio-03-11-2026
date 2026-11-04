@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Preloader from "./components/Preloader/Preloader";
 import SmoothScroll from "./components/SmoothScroll/SmoothScroll";
 import Navbar from "./components/Navbar/Navbar";
 import SphereCanvas from "./components/Sphere/SphereCanvas";
@@ -94,6 +95,7 @@ export default function App() {
 
   return (
     <div className="app-shell">
+      <Preloader />
       <SmoothScroll />
       <SphereCanvas sections={sections} />
       <Navbar progress={scrollProgress} activeSection={activeSection} />
