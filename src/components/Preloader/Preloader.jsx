@@ -69,7 +69,9 @@ export default function Preloader() {
           <div className="orbit orbit-one" />
           <div className="orbit orbit-two" />
           <div className="orbit-core">
-            <span>NS</span>
+            <span>
+              N<span className="orbit-s">S</span>
+            </span>
           </div>
           <div className="orbit-dot" />
         </div>

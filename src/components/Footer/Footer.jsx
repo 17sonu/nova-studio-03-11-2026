@@ -36,9 +36,9 @@ export default function Footer() {
           </a>
 
           <p>
-            Building what comes next.
+            Building digital worlds,
             <br />
-            One thoughtful interaction at a time.
+            with purpose.
           </p>
 
           <a

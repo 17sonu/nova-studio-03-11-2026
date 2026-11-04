@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import "./Navbar.css";
@@ -7,7 +6,7 @@ const links = [
   ["About", "about"],
   ["Expertise", "expertise"],
   ["Projects", "projects"],
-  ["Experience", "experience"]
+  ["Experience", "experience"],
 ];
 
 export default function Navbar({ progress = 0, activeSection = "home" }) {
@@ -38,8 +37,7 @@ export default function Navbar({ progress = 0, activeSection = "home" }) {
       }
 
       if (liquidRef.current) {
-        liquidRef.current.style.transform =
-          `scaleX(${currentRef.current})`;
+        liquidRef.current.style.transform = `scaleX(${currentRef.current})`;
       }
 
       if (Math.abs(targetRef.current - currentRef.current) > 0.0005) {
@@ -72,7 +70,7 @@ export default function Navbar({ progress = 0, activeSection = "home" }) {
     if (section) {
       section.scrollIntoView({
         behavior: "smooth",
-        block: "start"
+        block: "start",
       });
     }
   };
@@ -80,15 +78,24 @@ export default function Navbar({ progress = 0, activeSection = "home" }) {
   return (
     <header className={`navbar-wrap ${progress > 0.015 ? "is-scrolled" : ""}`}>
       <nav className="navbar">
-
         <div className="navbar-liquid" ref={liquidRef} />
 
         <a
           className="brand"
-          href=""
-          onClick={"location.reload(); return false;"}
+          href="#home"
+          onClick={(e) => scrollToSection(e, "home")}
         >
-          <span className="brand-mark">NS</span>
+          <span className="brand-mark">
+            <span className="brand-orbit orbit-one" />
+            <span className="brand-orbit orbit-two" />
+
+            <span className="brand-core">
+              <span>N<span className="brand-s">S</span></span>
+            </span>
+
+            <span className="brand-orbit-dot" />
+          </span>
+
           <span>
             NOVA <span className="brand-dot">Studio.</span>
           </span>
@@ -123,7 +130,6 @@ export default function Navbar({ progress = 0, activeSection = "home" }) {
         >
           {open ? <X /> : <Menu />}
         </button>
-
       </nav>
     </header>
   );

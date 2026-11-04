@@ -68,10 +68,14 @@
     inset 0 0 20px rgba(101, 232, 255, 0.08);
 }
 
-.orbit-core span {
+.orbit-core > span {
   color: #e9faff;
   font: 700 29px "Space Grotesk", sans-serif;
   text-shadow: 0 0 18px rgba(101, 232, 255, 0.6);
+}
+
+.orbit-core .orbit-s{
+    color: var(--cyan);
 }
 
 .orbit {
