@@ -19,7 +19,7 @@ const sections = [
   { id: "projects" },
   { id: "experience" },
   { id: "contact" },
-  { id: "footer" }
+  { id: "footer" },
 ];
 
 export default function App() {
@@ -46,14 +46,50 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    const nodes = sections.map(({ id }) => document.getElementById(id)).filter(Boolean);
-    const observer = new IntersectionObserver((entries) => {
-      const visible = entries.filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-      if (visible[0]) setActiveSection(visible[0].target.id);
-    }, { rootMargin: "-25% 0px -25% 0px", threshold: [0.05, 0.2, 0.4, 0.65] });
-    nodes.forEach((node) => observer.observe(node));
-    return () => observer.disconnect();
+    let frame = 0;
+
+    const updateActiveSection = () => {
+      cancelAnimationFrame(frame);
+
+      frame = requestAnimationFrame(() => {
+        const activationLine = window.innerHeight * 0.38;
+        let currentSection = sections[0].id;
+
+        for (const { id } of sections) {
+          const element = document.getElementById(id);
+          if (!element) continue;
+
+          if (element.getBoundingClientRect().top <= activationLine) {
+            currentSection = id;
+          } else {
+            break;
+          }
+        }
+
+        const atPageBottom =
+          window.innerHeight + window.scrollY >=
+          document.documentElement.scrollHeight - 2;
+
+        if (atPageBottom) currentSection = "footer";
+
+        setActiveSection((previous) =>
+          previous === currentSection ? previous : currentSection,
+        );
+      });
+    };
+
+    updateActiveSection();
+
+    window.addEventListener("scroll", updateActiveSection, {
+      passive: true,
+    });
+    window.addEventListener("resize", updateActiveSection);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
   }, []);
 
   return (
