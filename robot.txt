@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nova-studio-03-11-2026.vercel.app/sitemap.xml
