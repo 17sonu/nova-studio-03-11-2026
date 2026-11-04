@@ -161,7 +161,7 @@
 
 /* Section positioning */
 section[id] {
-  scroll-margin-top: -100px;
+  scroll-margin-top: -150px;
 }
 
 /* Responsive navigation */
@@ -213,5 +213,7 @@ section[id] {
     justify-content: center;
     margin-top: 6px;
   }
-
+  section[id] {
+    scroll-margin-top: -100px;
+  }
 }
